@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Audio</title>
+</head>
+
+<audio id="mozart">
+    <source src="mozart.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<body>
+    <h1>Michael Schwab and Jonathan B Breen.</h1>
+    <button onclick="playAudio()">Play</button>
+    <button onclick="pauseAudio()"Pause>Pause</button>
+    <p>
+        <button onclick="getCurrentTime()">Get time played in song</button>  
+        <p>Time played in song:</p>  
+        <p id="currentTime";>0 seconds</p>
+        <p>Out of</p>
+        <div id="totalTime"></div>
+
+        <p></p>
+
+    <button onclick="myFunction()">Click me to see the different ranges (in seconds) of audio  you've listened to.</button>
+    <p id="demo"></p>
+    <button onclick="isPaused()">Click me to see if the audio is paused or not:</button>
+    <p id="pausedStatement">Audio is paused.</p>
+    </p>
+    <button onclick="getVolume()">Click me to see the current volume level.</button>
+    <p id="volumeStatement">Current Volume: 100%</p>
+    <p><button onclick = "incrementVolume()">Increment Volume</button><button onclick="decrementVolume()">Decrement Volume</button><button onclick="mute()">Mute</button></p>
+
+</body>
+<script type="text/javascript">
+    var audio = document.getElementById("mozart");
+    audio.load();
+    
+    audio.addEventListener('loadedmetadata', function () {
+        // Set the total time once the audio has loaded
+        document.getElementById("totalTime").textContent = Math.floor(audio.duration) + " seconds";
+    });
+    
+    audio.controls = true;
+    
+
+    function playAudio()
+    {
+        audio.play();
+    }
+
+    function pauseAudio()
+    {
+        audio.pause();
+    }
+
+    function getCurrentTime()
+    {
+        document.getElementById('currentTime').textContent = Math.floor(mozart.currentTime ) + " seconds";
+    }
+    
+
+    function myFunction() {
+        var x = document.getElementById("mozart");
+        var string = "";
+        var ranges = x.played;
+        for(let i = 0; i < ranges.length; i++)
+        {
+            string += Math.floor(x.played.start(i)) + "-" + Math.floor(x.played.end(i)) + "<br>";
+        }
+        document.getElementById("demo").innerHTML = string;
+      }
+
+    function isPaused()
+    {
+        if(audio.paused) document.getElementById("pausedStatement").textContent = "Audio is paused.";
+        else document.getElementById("pausedStatement").textContent = "Audio is not paused.";
+    }
+    function getVolume()
+    {
+        document.getElementById("volumeStatement").textContent = "Current volume: " + Math.floor(audio.volume*100) + "%";
+    }
+    function mute() {audio.volume = 0;}
+    function incrementVolume()
+    {
+        audio.volume += .1;
+    }
+    function decrementVolume()
+    {
+        audio.volume -= .1;
+    }
+</script>
+</html>

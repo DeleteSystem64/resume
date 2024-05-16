@@ -1,0 +1,54 @@
+body
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+#currentTime
+{
+    font-size: 1000%;
+}
+
+.timeControls
+{
+    background-color: black;
+    color:whitesmoke;
+    padding: 10px;
+    font-size: 100%;
+}
+
+.pageBreak
+{
+    height: 4px;
+    background-color: black;
+}
+
+#pauseButton
+{
+    background-color: black;
+    color:whitesmoke;
+    padding: 1%;
+}
+
+#titles button
+{
+    background-color: #2c4da7;
+    margin: 3px;
+    padding: 2%;
+    color:white;
+    
+}
+
+#recordButton
+{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: red;
+    padding:4px;
+}
+
+#removeTitle button
+{
+    color:burlywood;
+    background-color: black;
+    padding:4px;
+}

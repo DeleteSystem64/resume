@@ -1,0 +1,121 @@
+<header>
+  <link rel = "stylesheet" type = "text/css" href="json.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="audio.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</header>
+
+<body>
+  <!--The navbar-->
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <div class="logo"><a href="#">mfschwa.com</a></div>
+        <ul class="links">
+          <li><a href="../../home/">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li>
+            <div class = "selected"><a href="#" class="desktop-link">Pages Oct-Dec</a></div> 
+            <input type="checkbox" id="show-features">
+            <label for="show-features">Webpages</label>
+            <ul>
+              <li><a href="../../keypress/">Key Press Assignment</a></li>
+              <li><a href="../../1070/">Jquery Demo</a></li>
+              <li><a href="../../jsonajax/098123">JSON and AJAX</a></li>
+              <div class = "selected"><li><a href="../../audioproj/238945">Audio Player Project</a></li></div>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="desktop-link">Pages Aug-Sep</a>
+            <input type="checkbox" id="show-services">
+            <label for="show-services">Earlier Webpages</label>
+            <ul>
+              <li><a href="../">Select Web Host Provider Assignment</a></li>
+              <li><a href="../../382934/layout.html">Basic Fixed/Fluid Hybrid</a></li>
+              <li><a href="../../745823/">Javascript Events</a></li>
+              <li><a href="../../552437/">Band Store Setup</a></li>
+              <li><a href="../../64636/">Business Cards</a></li>
+              <li><a href="../../091232/prime.html">Prime Number Generator</a></li>
+              <li><a href="../../sortdemo/746345/">Sorting Demo</a></li>  
+              <li><a href="../../532897/">Move Buttons</a></li>
+              
+            </ul>
+          </li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </div>
+    <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+    <form action="#" class="search-box">
+      <input type="text" placeholder="Type Something to Search..." required>
+      <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+    </form>
+  </nav>
+  </div>
+  
+  <!--Everything on the page that isn't the navbar is in here-->
+  <div class="main">
+    <div class="page-name">
+      <h1>Audio Player Project</h1>
+      <h3>Enjoy some fine music. File name: mozart.mp3</h3>
+    </div>
+    <hr id="page-name-divider">
+    <br><br>
+
+    <!--The meat of the page... The actual page content-->
+    <div class="page-content">
+      <audio id="mozart">
+        <source src="mozart.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      
+      <!--Controls for the audio player-->
+      <div class="controls">
+        <!--rewind 5 secs-->
+        <button onclick="skip(-5)" class="timeControls">  <  </button>
+        <!--pause/play-->
+        <button id="pauseButton" onclick="togglePause()">Play</button>
+        <!--Go forward 5 secs-->
+        <button onclick="skip(5)" class="timeControls"> ></button>
+      </div>
+      
+      <!--Display of current time in song-->
+      <div>
+        <p id="currentTime";>0:00</p>
+      </div>
+      
+
+      <!--The titles go here: buttons that will play a section of a song-->
+      <!--JavaScript does the legwork-->
+      <div id="titles">
+        
+      </div>
+      <hr class="pageBreak">
+      <!--This is the section where the user can make their own titles-->
+      <br>
+      <div id="makeTitles">
+        To make a title of your own, enter a name, and then hit the record button. Then hit it again to stop recording.
+        <p></p>
+        <input type = text id="titleTextBox">
+        <button id = "recordButton" onclick="record()">Record</button>
+      </div>
+
+      <br>
+      <!--This section is for removing a title-->
+      <div id="removeTitle">
+        Select a title, then hit this button to remove it.
+        <br>
+        <button id="remove" onclick="removeTitle()">Remove Current Title</button>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</body>
+
+
+<script type="text/javascript" src="script.js"></script>
